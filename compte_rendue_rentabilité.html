@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Rentabilité des Produits 2024 - Islam Hachem | ENCG Settat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', 'Times New Roman', serif;
+            background: #f0f4f8;
+            color: #1a2a3a;
+            line-height: 1.55;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2);
+            border-radius: 28px;
+            overflow: hidden;
+            padding: 2rem 2rem 3rem 2rem;
+        }
+
+        /* Typographie */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            border-left: 8px solid #2c7da0;
+            padding-left: 1.2rem;
+            margin-top: 0.2em;
+            color: #0b3b4f;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 0.3rem;
+            color: #1e4a6e;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-left: 0.2rem;
+            color: #2c3e50;
+        }
+
+        .subhead {
+            color: #2c7da0;
+            font-weight: 500;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            overflow-x: auto;
+            display: block;
+        }
+
+        th {
+            background-color: #eef2f7;
+            padding: 12px 10px;
+            border: 1px solid #d4dee8;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #e2e8f0;
+            padding: 9px 8px;
+            text-align: right;
+        }
+
+        td:first-child, th:first-child { text-align: left; font-weight: 500; background-color: #fafcff; }
+        .table-caption {
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: -0.8rem;
+            color: #4a627a;
+        }
+
+        /* Badges & status */
+        .badge-success { background: #dcfce7; color: #15803d; padding: 3px 8px; border-radius: 40px; font-weight: 600; display: inline-block; font-size: 0.75rem; }
+        .badge-warning { background: #fef9c3; color: #854d0e; padding: 3px 8px; border-radius: 40px; font-weight: 600; display: inline-block; font-size: 0.75rem; }
+        .badge-danger { background: #fee2e2; color: #b91c1c; padding: 3px 8px; border-radius: 40px; font-weight: 600; display: inline-block; font-size: 0.75rem; }
+        .badge-critical { background: #ffedd5; color: #9a3412; padding: 3px 8px; border-radius: 40px; font-weight: 600; display: inline-block; font-size: 0.75rem; }
+        .badge-dark { background: #e2e8f0; color: #1e293b; padding: 3px 8px; border-radius: 40px; font-weight: 500; }
+
+        /* Cartes KPI */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .kpi-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef3;
+            transition: 0.2s;
+        }
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f3b5c;
+            line-height: 1.2;
+        }
+        .kpi-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4a627a;
+            font-weight: 600;
+        }
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .insight-box {
+            background: #f1f5f9;
+            border-left: 5px solid #2c7da0;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 20px;
+        }
+        pre {
+            background: #1e2a36;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+        }
+        hr {
+            margin: 2rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #cbd5e1, transparent);
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #5b6e8c;
+            border-top: 1px solid #e2edf2;
+            padding-top: 2rem;
+        }
+        .swot {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .swot-card {
+            background: #fefcf5;
+            border-radius: 1.2rem;
+            padding: 1rem;
+            border: 1px solid #e9e2d0;
+        }
+        .swot-title {
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1rem; }
+            .kpi-value { font-size: 1.6rem; }
+            .swot { grid-template-columns: 1fr; }
+        }
+        .centered {
+            text-align: center;
+        }
+        .mt-4 { margin-top: 1.5rem; }
+        .table-scroll {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <div style="font-size: 0.8rem; letter-spacing: 1px; color: #2c7da0;">ÉCOLE NATIONALE DE COMMERCE ET DE GESTION — SETTAT</div>
+        <div style="font-weight: 700; font-size: 1.2rem;">Université Hassan 1er — Maroc</div>
+        <hr style="width: 100px; margin: 0.5rem auto;">
+        <h1 style="border-left: none; text-align: center;">COMPTE RENDU D'ANALYSE DE RENTABILITÉ DES PRODUITS</h1>
+        <div>Exercice 2024 — Portefeuille de 20 Références — 4 Familles</div>
+        <div style="margin-top: 12px;"><span class="badge-dark">Auteur: Islam Hachem</span> <span class="badge-dark">Contrôle de Gestion & Analyse Financière</span> <span class="badge-dark">Version 2.0 — Avril 2026</span></div>
+    </div>
+
+    <!-- Résumé exécutif -->
+    <div class="insight-box">
+        <h2 style="margin-top: 0; border-bottom: none;">⚡ RÉSUMÉ EXÉCUTIF</h2>
+        <p>Analyse financière approfondie de 20 produits répartis en 4 familles stratégiques (coûts complets). <strong>CA global: 3,41 M MAD</strong> – Marge brute moyenne <strong>48,7%</strong> – 85% du portefeuille rentable – Seuils couverts en moyenne à 221%. <strong>3 produits déficitaires</strong> (P15, P18, P20) génèrent une perte cumulée de 56 810 MAD. La famille Accessoires affiche la meilleure couverture (303%), Logiciels pilier commercial (35,5% du CA). Décisions stratégiques urgentes requises pour les poches de pertes.</p>
+    </div>
+
+    <!-- KPI Dashboard -->
+    <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-value">3,41 M MAD</div><div class="kpi-label">CA TOTAL</div></div>
+        <div class="kpi-card"><div class="kpi-value">48,7%</div><div class="kpi-label">Taux MB Moyen</div></div>
+        <div class="kpi-card"><div class="kpi-value">26,5%</div><div class="kpi-label">Taux MN Global</div></div>
+        <div class="kpi-card"><div class="kpi-value">85%</div><div class="kpi-label">Produits rentables</div></div>
+        <div class="kpi-card"><div class="kpi-value">221%</div><div class="kpi-label">Couverture seuil</div></div>
+        <div class="kpi-card"><div class="kpi-value">-56 810 MAD</div><div class="kpi-label">Pertes cumulées</div></div>
+    </div>
+
+    <!-- Tableau synthétique par famille -->
+    <h2>📊 Synthèse par famille de produits</h2>
+    <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Famille</th><th>Nb</th><th>CA (MAD)</th><th>Taux MB</th><th>Taux MN</th><th>Seuil couverture</th><th>Produits déficitaires</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>📦 Accessoires</td><td>1</td><td>284 079</td><td>49,8%</td><td>33,3%</td><td>303%</td><td>0/1</td></tr>
+                <tr><td>💻 Logiciels</td><td>8</td><td>1 211 895</td><td>49,9%</td><td>25,3%</td><td>203%</td><td>1/8</td></tr>
+                <tr><td>🛠️ Services</td><td>6</td><td>973 205</td><td>51,1%</td><td>25,8%</td><td>202%</td><td>2/6</td></tr>
+                <tr><td>⚡ Électronique</td><td>4</td><td>942 749</td><td>44,4%</td><td>26,8%</td><td>253%</td><td>0/4</td></tr>
+                <tr style="background:#f8fafc;"><th>TOTAL</th><th>20</th><th>3 411 928</th><th>48,7%</th><th>26,5%</th><th>221%</th><th>3/20</th></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Produits stars / déficitaires -->
+    <h2>🏆 Podiums & alertes</h2>
+    <div class="flex-between">
+        <div style="flex:1; background:#f9fbfe; border-radius: 1rem; padding: 1rem;">
+            <h3>Top 5 Marge nette %</h3>
+            <ul style="list-style: none;">
+                <li>🥇 Produit 03 (Électronique) – 51,2%</li>
+                <li>🥈 Produit 06 (Services) – 40,0%</li>
+                <li>🥉 Produit 17 (Services) – 39,9%</li>
+                <li>4. Produit 13 (Logiciels) – 38,9%</li>
+                <li>5. Produit 04 (Logiciels) – 37,7%</li>
+            </ul>
+        </div>
+        <div style="flex:1; background:#fff5f0; border-radius: 1rem; padding: 1rem;">
+            <h3>⛔ Produits déficitaires</h3>
+            <ul>
+                <li>Produit 15 (Services) : -32,7% &nbsp; (-22 517 MAD)</li>
+                <li>Produit 18 (Services) : -25,3% &nbsp; (-16 452 MAD)</li>
+                <li>Produit 20 (Logiciels) : -20,0% &nbsp; (-17 841 MAD)</li>
+            </ul>
+            <p class="badge-danger" style="display:inline-block;">Perte totale: 56 810 MAD</p>
+        </div>
+        <div style="flex:1; background:#fef6e0; border-radius: 1rem; padding: 1rem;">
+            <h3>🔴 Zone d'alerte (MN&lt;10%)</h3>
+            <ul><li>P08 (Électronique) : 8,8%</li><li>P14 (Logiciels) : 6,8%</li><li>P19 (Services) : 6,2%</li></ul>
+            <p>Risque élevé de bascule en déficit</p>
+        </div>
+    </div>
+
+    <!-- Tableau complet produits (20 lignes) -->
+    <h2>📋 Analyse individuelle des 20 produits</h2>
+    <div class="table-scroll">
+        <table>
+            <thead><tr><th>Produit</th><th>Famille</th><th>CA (MAD)</th><th>CV (MAD)</th><th>CF (MAD)</th><th>MB%</th><th>MN (MAD)</th><th>MN%</th><th>Statut</th></tr></thead>
+            <tbody>
+                <tr><td>P01</td><td>Logiciels</td><td>77 576</td><td>32 030</td><td>22 428</td><td>58,7%</td><td>23 118</td><td>29,8%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P02</td><td>Services</td><td>251 392</td><td>138 986</td><td>34 536</td><td>44,7%</td><td>77 870</td><td>31,0%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P03</td><td>Électronique</td><td>262 659</td><td>105 656</td><td>22 560</td><td>59,8%</td><td>134 443</td><td>51,2%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P04</td><td>Logiciels</td><td>139 715</td><td>66 801</td><td>20 196</td><td>52,2%</td><td>52 718</td><td>37,7%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P05</td><td>Logiciels</td><td>232 208</td><td>117 321</td><td>43 776</td><td>49,5%</td><td>71 111</td><td>30,6%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P06</td><td>Services</td><td>241 871</td><td>100 625</td><td>44 544</td><td>58,4%</td><td>96 702</td><td>40,0%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P07</td><td>Électronique</td><td>203 691</td><td>122 272</td><td>38 220</td><td>40,0%</td><td>43 199</td><td>21,2%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P08</td><td>Électronique</td><td>206 730</td><td>135 883</td><td>52 704</td><td>34,3%</td><td>18 143</td><td>8,8%</td><td><span class="badge-critical">🔴 Alerte</span></td></tr>
+                <tr><td>P09</td><td>Logiciels</td><td>241 944</td><td>125 586</td><td>30 672</td><td>48,1%</td><td>85 686</td><td>35,4%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P10</td><td>Accessoires</td><td>284 079</td><td>142 707</td><td>46 632</td><td>49,8%</td><td>94 740</td><td>33,3%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P11</td><td>Logiciels</td><td>106 303</td><td>43 894</td><td>42 564</td><td>58,7%</td><td>19 845</td><td>18,8%</td><td><span class="badge-warning">🟠 Vigilance</span></td></tr>
+                <tr><td>P12</td><td>Logiciels</td><td>111 393</td><td>61 026</td><td>37 984</td><td>45,3%</td><td>12 383</td><td>11,1%</td><td><span class="badge-warning">🟠 Vigilance</span></td></tr>
+                <tr><td>P13</td><td>Logiciels</td><td>140 696</td><td>56 732</td><td>55 428</td><td>59,8%</td><td>54 768</td><td>38,9%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P14</td><td>Logiciels</td><td>72 917</td><td>40 104</td><td>27 852</td><td>43,6%</td><td>4 961</td><td>6,8%</td><td><span class="badge-critical">🔴 Alerte</span></td></tr>
+                <tr><td>P15</td><td>Services</td><td>68 767</td><td>43 842</td><td>47 064</td><td>36,2%</td><td>-22 517</td><td>-32,7%</td><td><span class="badge-danger">⛔ Déficit</span></td></tr>
+                <tr><td>P16</td><td>Électronique</td><td>269 669</td><td>133 350</td><td>52 296</td><td>40,5%</td><td>57 023</td><td>21,1%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P17</td><td>Services</td><td>277 973</td><td>100 683</td><td>69 204</td><td>55,2%</td><td>111 007</td><td>39,9%</td><td><span class="badge-success">✅</span></td></tr>
+                <tr><td>P18</td><td>Services</td><td>65 256</td><td>33 856</td><td>48 036</td><td>48,3%</td><td>-16 452</td><td>-25,3%</td><td><span class="badge-danger">⛔ Déficit</span></td></tr>
+                <tr><td>P19</td><td>Services</td><td>67 946</td><td>34 547</td><td>46 380</td><td>49,3%</td><td>4 172</td><td>6,2%</td><td><span class="badge-critical">🔴 Alerte</span></td></tr>
+                <tr><td>P20</td><td>Logiciels</td><td>89 143</td><td>63 421</td><td>71 520</td><td>29,2%</td><td>-17 841</td><td>-20,0%</td><td><span class="badge-danger">⛔ Déficit</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Seuil de rentabilité et diagnostic -->
+    <h2>📈 Seuil de rentabilité et sensibilité</h2>
+    <div class="insight-box">
+        <p><strong>Couverture globale:</strong> SR total = 1 567 896 MAD (CA réel 3,41M MAD). Marge de sécurité 1,84 M MAD, indice 54%.<br>
+        <strong>Famille la plus résiliente:</strong> Accessoires (303% couverture) – même avec -40% de CA reste largement profitable. <br>
+        <strong>Produit 15 :</strong> Seuil individuel à 130 011 MAD (+61 244 MAD nécessaire).<br>
+        <strong>Produit 20 :</strong> Structure la plus déséquilibrée (CV/CA 71%, CF/CA 80%). Seuil à 244 932 MAD → irréaliste sans transformation radicale.</p>
+    </div>
+
+    <!-- SWOT -->
+    <h2>📌 Analyse SWOT du portefeuille</h2>
+    <div class="swot">
+        <div class="swot-card"><div class="swot-title" style="color:#2b6e3c;">✅ Forces</div><ul><li>85% produits rentables</li><li>MB globale 48,7%</li><li>Couverture seuil 221%</li><li>P03 star (MN 51,2%)</li><li>Diversification 4 familles</li></ul></div>
+        <div class="swot-card"><div class="swot-title" style="color:#b45309;">⚠️ Faiblesses</div><ul><li>3 produits déficitaires (-56 810 MAD)</li><li>CF/CA très élevé P20 (80%)</li><li>Accessoires mono-produit</li><li>P08, P14, P19 proches seuil</li><li>Forte dispersion Services</li></ul></div>
+        <div class="swot-card"><div class="swot-title" style="color:#2c7da0;">🚀 Opportunités</div><ul><li>Extension gamme Accessoires</li><li>Développement commercial P03/P17</li><li>Optimisation CF Services</li><li>Digitalisation / bundles cross-sell</li></ul></div>
+        <div class="swot-card"><div class="swot-title" style="color:#b91c1c;">⚠️ Menaces</div><ul><li>Hausse coûts appro (P08 vulnérable)</li><li>Pression concurrentielle</li><li>P14/P19 près du point mort</li><li>Coûts fixes rigides</li></ul></div>
+    </div>
+
+    <!-- Plan stratégique / Axes -->
+    <h2>📌 Plan stratégique prioritaire</h2>
+    <div class="flex-between" style="gap: 1rem;">
+        <div style="background:#eef2ff; padding:1rem; border-radius:1rem; flex:1"><strong>🔴 AXE URGENT (0-3 mois)</strong><br>✔ Audits CF P15/P18/P20<br>✔ Décision arrêt ou refonte<br>✔ Économie pertes cible: 56 810 MAD</div>
+        <div style="background:#fef3c7; padding:1rem; border-radius:1rem; flex:1"><strong>🟠 AXE COURT TERME (3-6 mois)</strong><br>✔ Sécuriser P08, P14, P19<br>✔ Réviser clés CF Services<br>✔ Plan commercial renforcé</div>
+        <div style="background:#dcfce7; padding:1rem; border-radius:1rem; flex:1"><strong>🟢 AXE MOYEN TERME (6-18 mois)</strong><br>✔ Développer P03, P06, P17<br>✔ Lancer 2-3 produits Accessoires<br>✔ CA cible +15% sur 18 mois</div>
+    </div>
+
+    <h3>🎯 Recommandations clés par produit déficitaire</h3>
+    <ul>
+        <li><strong>P15 (Services):</strong> Audit charges fixes inévitables. Si >50% inévitables → abandon planifié. Sinon hausse tarifaire 20% et objectif CA +90% (très difficile).</li>
+        <li><strong>P18 (Services):</strong> Revoir la clé d’imputation (vs P19 même CA). Objectif réduction CF de 10 000 MAD + croissance CA pour atteindre 100 000 MAD.</li>
+        <li><strong>P20 (Logiciels):</strong> Modèle structurellement non viable (CV/CA 71%, CF/CA 80%). Recommandation : arrêt programmé avec transfert ressources vers gammes rentables.</li>
+    </ul>
+
+    <div class="insight-box">
+        <h3>📊 Tableau de bord de pilotage (recommandé)</h3>
+        <p>Indicateurs mensuels : MN% par produit, nb produits déficitaires, CA cumulé vs objectif, taux de couverture seuil. Seuils d’alerte : MN% &lt;10% → plan correctif immédiat.</p>
+    </div>
+
+    <h2>🧾 Conclusion & perspectives</h2>
+    <p>Le portefeuille 2024 affiche une santé financière globalement robuste (26,5% de marge nette consolidée). Toutefois, l'élimination des 3 produits déficitaires (+56 810 MAD de résultat potentiel) et la sécurisation des zones d’alerte constituent la priorité absolue. Les familles Électronique et Accessoires offrent un socle de rentabilité élevé, tandis que la famille Services doit faire l’objet d’une rationalisation des coûts fixes et d’un recentrage sur les best-sellers P06 et P17. Le plan stratégique articulé sur 18 mois permettra d’atteindre 100% de produits rentables et d’accroître le CA de +15%.</p>
+
+    <footer>
+        <hr>
+        <p>Islam Hachem — ENCG Settat, Université Hassan 1er<br>Contrôle de Gestion & Analyse Financière — Exercice 2024 | Avril 2026 — Version définitive<br>« La rentabilité n'est pas un objectif en soi, c'est le résultat d'une stratégie bien exécutée. »</p>
+        <p style="font-size:0.7rem;">Document confidentiel — Usage interne</p>
+    </footer>
+</div>
+</body>
+</html>
